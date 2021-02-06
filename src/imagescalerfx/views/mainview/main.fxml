@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="360.0" minWidth="580.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imagescalerfx.views.mainview.Controller">
+   <right>
+      <VBox prefHeight="382.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="160.0" text="Scaled instances" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <ListView fx:id="listViewScaledInstances" onKeyPressed="#ShowScaledImage" onMouseClicked="#ShowScaledImage" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="382.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="160.0" text="Images" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <ListView fx:id="listViewImages" onKeyPressed="#ShowListViewScaledInstances" onMouseClicked="#ShowListViewScaledInstances" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <Label fx:id="labelStatus" prefHeight="18.0" prefWidth="157.0" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets left="2.0" top="7.0" />
+         </BorderPane.margin></Label>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="382.0" prefWidth="369.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonStart" mnemonicParsing="false" onAction="#StartScales" text="Start" />
+            <ImageView fx:id="imageViewSelectedImage" fitHeight="139.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Button fx:id="buttonChart" mnemonicParsing="false" onAction="#goToChartView" text="Chart" />
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
